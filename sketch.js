@@ -1,11 +1,11 @@
 let array = [];
 
 function setup() {
-  createCanvas(400, 400);
-  background(220);
+  createCanvas(windowWidth, windowHeight);
+  background(220, 50, 133);
 
   strokeWeight(5);
-  noFill();
+
 
 }
 
@@ -13,8 +13,10 @@ function draw() {
 
 if (mouseIsPressed){
   // line(mouseX, mouseY, pmouseX, pmouseY);
-  background(0);
-  array.push([mouseX, mouseY]);
+  stroke(map(mouseX, 0, 600, 0, 255, true))
+  // array.push([mouseX, mouseY]);
+  line(width - mouseX, height- mouseY, width - pmouseX, height - pmouseY);
+  line(mouseX, mouseY, pmouseX, pmouseY);
   }
 
 }
